@@ -1,4 +1,36 @@
 <section class="page">
   <h2>Módulo de Técnicas de Conteo</h2>
-  <p>Aquí irán las permutaciones, combinaciones y las gráficas.</p>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="counting-form">
+    <div class="form-group">
+      <label for="n">n</label>
+      <input id="n" type="number" formControlName="n" />
+    </div>
+
+    <div class="form-group">
+      <label for="r">r</label>
+      <input id="r" type="number" formControlName="r" />
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Operación</label>
+      <select id="tipo" formControlName="tipo">
+        <option value="perm-sin-rep">Permutaciones sin repetición</option>
+        <option value="perm-con-rep">Permutaciones con repetición</option>
+        <option value="comb-sin-rep">Combinaciones sin repetición</option>
+        <option value="comb-con-rep">Combinaciones con repetición</option>
+      </select>
+    </div>
+
+    <button type="submit">Calcular</button>
+  </form>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <section *ngIf="resultado !== null" class="results">
+    <h3>Resultado</h3>
+    <p><strong>{{ descripcionOperacion }}:</strong> {{ resultado }}</p>
+  </section>
 </section>

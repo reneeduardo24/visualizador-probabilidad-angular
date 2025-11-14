@@ -1,4 +1,47 @@
 <section class="page">
   <h2>Módulo de Conjuntos</h2>
-  <p>Aquí irán los formularios de S, A, B, C y el diagrama de Venn.</p>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="sets-form">
+    <div class="form-group">
+      <label for="S">Espacio muestral S</label>
+      <input id="S" type="text" formControlName="S" placeholder="Ej: 1,2,3,4,5" />
+    </div>
+
+    <div class="form-group">
+      <label for="A">Conjunto A</label>
+      <input id="A" type="text" formControlName="A" placeholder="Ej: 1,2,3" />
+    </div>
+
+    <div class="form-group">
+      <label for="B">Conjunto B</label>
+      <input id="B" type="text" formControlName="B" placeholder="Ej: 2,3,4" />
+    </div>
+
+    <div class="form-group">
+      <label for="C">Conjunto C (opcional por ahora)</label>
+      <input id="C" type="text" formControlName="C" placeholder="Ej: 3,4,5" />
+    </div>
+
+    <button type="submit">Calcular operaciones básicas</button>
+  </form>
+
+  <p *ngIf="mensajeValidacion" class="error">
+    {{ mensajeValidacion }}
+  </p>
+
+  <section *ngIf="mostrarResultados" class="results">
+    <h3>Resultados</h3>
+
+    <p><strong>S:</strong> {{ formatear(conjuntoS) }}</p>
+    <p><strong>A:</strong> {{ formatear(conjuntoA) }}</p>
+    <p><strong>B:</strong> {{ formatear(conjuntoB) }}</p>
+
+    <hr />
+
+    <p><strong>A ∪ B:</strong> {{ formatear(resultadoUnionAB) }}</p>
+    <p><strong>A ∩ B:</strong> {{ formatear(resultadoInterAB) }}</p>
+    <p><strong>A − B:</strong> {{ formatear(resultadoDifAB) }}</p>
+    <p><strong>B − A:</strong> {{ formatear(resultadoDifBA) }}</p>
+    <p><strong>Ā (complemento de A en S):</strong> {{ formatear(resultadoComplA) }}</p>
+  </section>
 </section>
