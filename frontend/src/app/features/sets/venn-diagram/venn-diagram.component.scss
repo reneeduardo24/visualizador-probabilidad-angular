@@ -1,0 +1,18 @@
+.venn-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.venn-container {
+  min-width: 400px;
+  min-height: 300px;
+}
+
+.venn-legend {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

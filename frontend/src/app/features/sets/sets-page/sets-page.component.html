@@ -43,5 +43,11 @@
     <p><strong>A − B:</strong> {{ formatear(resultadoDifAB) }}</p>
     <p><strong>B − A:</strong> {{ formatear(resultadoDifBA) }}</p>
     <p><strong>Ā (complemento de A en S):</strong> {{ formatear(resultadoComplA) }}</p>
+
+    <!-- Aquí el diagrama de Venn -->
+    <app-venn-diagram
+      [conjuntoA]="conjuntoA"
+      [conjuntoB]="conjuntoB">
+    </app-venn-diagram>
   </section>
 </section>

@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SetOperationsService, Conjunto } from '../../../core/services/set-operations.service';
 import { NgIf } from '@angular/common';
+import { VennDiagramComponent } from '../venn-diagram/venn-diagram.component';
+import { FormulaViewerComponent } from "../../../shared/components/formula-viewer/formula-viewer.component";
 
 @Component({
   selector: 'app-sets-page',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf, VennDiagramComponent, FormulaViewerComponent],
   templateUrl: './sets-page.component.html',
   styleUrls: ['./sets-page.component.scss'],
 })

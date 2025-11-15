@@ -1,0 +1,8 @@
+<div class="chart-wrapper" *ngIf="labels.length > 0 && data.length > 0">
+  <canvas
+    baseChart
+    [type]="barChartType"
+    [data]="barChartData"
+    [options]="barChartOptions">
+  </canvas>
+</div>
